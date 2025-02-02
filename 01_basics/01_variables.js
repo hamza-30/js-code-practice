@@ -1,13 +1,15 @@
-const accountId = 14455
-let accountEmail = "hamza@gmail.com"
-var accountPassword = "12345"
-accountCity = "Jaipur";
+const accountId = "2342"
+let accountEmail = "sdsfa@gmail.com"
+var accountPassword = "hamza"
+accountCity = "Karachi"
+let accountState;
 
-//accountId = 2
-accountEmail = "hamza212@gmail.com"
-accountPassword = "2342"
-accountCity = "Chicago"
+// accountId = 2
 
-console.log(accountId);
+accountEmail = "hasf@gmail.com"
+accountPassword = "1352"
+accountCity = "Lahore"
 
-console.table([accountId, accountEmail, accountPassword, accountCity])
+console.log(accountId)
+console.table([accountId, accountEmail, accountPassword, accountCity, accountState])
+
