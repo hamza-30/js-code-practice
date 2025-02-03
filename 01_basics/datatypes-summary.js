@@ -31,7 +31,7 @@ const myFunction = function(){
     console.log("Hello World")
 }
 
-console.log(typeof anotherId)
+// console.log(typeof anotherId)
 
 //typeof 
 //string: string
@@ -39,5 +39,37 @@ console.log(typeof anotherId)
 //boolean: boolean
 //null: object
 //function: function
-//object(without function call): object
-//object(with function call): function
+//object: object
+
+
+// +++++++++++++++++++++++++++++++++++++++++++
+
+//Stack (to store primitive), Heap (to store non-primitive)
+
+let simplevalue = "amazon"
+
+let anotherValue = simplevalue
+
+console.log(simplevalue)
+console.log(anotherValue)
+
+let user1 = {
+    email: "user @google.com",
+    pin: "4235"
+}
+
+let user2 = user1
+
+user2.email = "hamza@google.com"
+
+console.log(user1.email)
+console.log(user2.email)
+
+
+//when we store a primitive datatype in another variable, we get a copy of
+//it and any changes or updation affect the copy, not the original 
+//variable.
+
+//when we store a non primitive datatype in another variable, we get 
+//the original reference of that non-primtive datatype and any changes
+//or updation affect the new as well as original variable as well
