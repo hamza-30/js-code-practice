@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="building" src="https://images.pexels.com/photos/30394204/pexels-photo-30394204/free-photo-of-vibrant-historic-architecture-in-mexico-city.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="red building"></li>
+            <li><img width="200px" id="vintage-car" src="https://images.pexels.com/photos/19300566/pexels-photo-19300566/free-photo-of-vintage-car-parked-in-front-of-graffiti-in-havana-cuba.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="vintage car"></li>
+            <li><img width="200px" id="venice" src="https://images.pexels.com/photos/2763964/pexels-photo-2763964.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="venice street"></li>
+            <li><img width="200px" id="train-station" src="https://images.pexels.com/photos/30432517/pexels-photo-30432517/free-photo-of-people-walking-on-historic-railway-platform.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="railway platform"></li>
+            <li><img width="200px" id="lemons" src="https://images.pexels.com/photos/30613164/pexels-photo-30613164/free-photo-of-fresh-lemons-piled-together-top-view.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="alot of lemons" ></li>
+            <li><a style="color: aliceblue" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    // document.getElementById("lemons").onclick = function(params) {
+    //     alert("lemons clicked")
+    // }
+
+    //attachEvent()
+    //jQuery - on
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul")   
+    // }, false) //third parameter(boolean) is for event propagation, when false (default), bubbling of event occurs i.e from bottom to top. But if true then capturing of event occurs, i.e from top to bottom
+
+    // document.getElementById('lemons').addEventListener('click', function(e){
+    //     console.log("lemons clicked")   
+    //     e.stopPropagation()
+    // }, false)
+    
+    // document.getElementById("google").addEventListener("click", function (e) {
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     console.log("google clicked");
+    // }, false)
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName)
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+        
+    }, false)
+    
+    // removeIt.parentNode.removeChild(removeIt)
+</script>
+</html>
