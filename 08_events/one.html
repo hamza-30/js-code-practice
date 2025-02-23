@@ -38,26 +38,40 @@
 
     // document.getElementById('lemons').addEventListener('click', function(e){
     //     console.log("lemons clicked")   
-    //     e.stopPropagation()
     // }, false)
     
     // document.getElementById("google").addEventListener("click", function (e) {
     //     e.preventDefault()
-    //     e.stopPropagation()
     //     console.log("google clicked");
     // }, false)
 
-    document.querySelector('#images').addEventListener('click', function(e){
-        console.log(e.target.tagName)
-        if(e.target.tagName === 'IMG'){
-            console.log(e.target.id);
+    // document.querySelector('#images').addEventListener('click', function(e){
+    //     console.log(e.target.tagName)
+    //     if(e.target.tagName === 'IMG'){
+    //         console.log(e.target.id);
             
-            let removeIt = e.target.parentNode
-            removeIt.remove()
-        }
+    //         let removeIt = e.target.parentNode
+    //         removeIt.remove()
+    //         // removeIt.parentNode.removeChild(removeIt)
+    //     }
         
-    }, false)
-    
-    // removeIt.parentNode.removeChild(removeIt)
+    // }, false)
+
+    document.querySelector("#images").addEventListener("click", (e) => {
+        console.log(e.type) //returns the type of event
+        console.log(e.timeStamp) //returns the time in milliseconds at which the event was created. milliseconds from January 1,1970
+        e.preventDefault()
+        console.log(e.defaultPrevented) //returns true if preventDefault() is true otherwise false
+        console.log(e.target) //prints the element on which event occurred
+        //toElement property refers to the element the mouse is entering in
+        console.log(e.srcElement) //older property similar to target, refers to the element that triggered the event
+        console.log(e.currentTarget) //prints the element that the event listener is attached to
+
+    })
+
+    document.addEventListener("keydown", (e)=> {
+        console.log(e.code) //prints the name of key pressed on keyboard
+    })
+
 </script>
 </html>
